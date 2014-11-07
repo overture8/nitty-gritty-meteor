@@ -38,9 +38,9 @@ if (Meteor.isClient) {
     'click #question-link': function(e, template) {
       e.preventDefault();
       prevSelected = Questions.findOne({selected: true});
-      Questions.update({_id: prevSelected._id}, {
-        $set: {selected: false}
-      });
+      if (prevSelected) {
+        Questions.update({_id: prevSelected._id}, { $set: {selected: false} });
+      }
       Questions.update({_id: this._id}, {$set: {selected: true}});
     }
   });
