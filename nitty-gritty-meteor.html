@@ -1,0 +1,37 @@
+<head>
+  <title>nitty-gritty-meteor</title>
+</head>
+
+<body></body>
+
+<template name="assessorView">
+  <h2>Add some Questions</h2>
+  <form id='add-question'>
+    <input type='text' id='question-text' placeholder='Add a question'/>
+  </form>
+
+  <ul>
+  {{#each questions}}
+  <li class="{{selectedClass}}">
+    <a href='#' id='question-link'>{{desc}}</a>
+  </li>
+  {{/each}}
+  </ul>
+</template>
+
+<template name="respondentView">
+  <h2>Who are you?</h2>
+  {{#each respondents}}
+  <li>
+    <a href="/respondent/{{_id}}">{{name}}</a>
+  </li>
+  {{/each}}
+</template>
+
+<template name="RespondentShow">
+  <p>Question for: <strong>{{name}}</strong></p>
+
+  {{#with currentQuestion}}
+    <p class='question'>{{desc}}</p>
+  {{/with}}
+</template>
