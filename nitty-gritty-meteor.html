@@ -6,6 +6,10 @@
 
 <template name="assessorView">
   <h2>Add some Questions</h2>
+  <p>
+    <a href='/respondent'>View Respondents</a> - Best to open in seperate brower window(s)
+  </p>
+
   <form id='add-question'>
     <input type='text' id='question-text' placeholder='Add a question'/>
   </form>
@@ -17,6 +21,7 @@
   </li>
   {{/each}}
   </ul>
+
 </template>
 
 <template name="respondentView">
